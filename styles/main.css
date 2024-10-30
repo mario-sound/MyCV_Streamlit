@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+* {font-family: 'Roboto';}
+
+h1 {
+    color: #6985a2;
+}
+
+h2 {
+    color: #97a0bf
+}
+
+a {
+    text-decoration: none;
+    color: #5D8AA8 !important;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px #586e75;
+}
+
+a:hover {
+    color: #A9BCD0 !important;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #586e75;
+}
+
+ul {list-style-type: none;}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 5%;
+}
+
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/*
+
+Fondo principal: #F1F4F8 (gris muy claro)
+Texto principal: #2C3E50 (azul grisáceo oscuro)
+Encabezados: #34495E (azul pizarra)
+Links y botones: #5D8AA8 (azul acero)
+Color de detalles o resaltado: #A9BCD0 (azul gris claro)
+Sombra sutil: #D3DCE3 (gris suave para darle profundidad sin distracción)
+
+*/
