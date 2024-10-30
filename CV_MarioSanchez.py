@@ -1,11 +1,15 @@
+from pathlib import Path
+
 import streamlit as st
+from PIL import Image
 
 # General Settings
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
 page_icon = "https://img.icons8.com/?size=100&id=3404&format=png&color=000000"
 page_title = "Mario Sánchez CV Audio Dev"
-image = "./assets/image.png"
+profile_pic = current_dir / "assets" / "image.png"
 description = "Te ayudo con la producción de audio de tu podcast o videojuego. También te ayudo a mejorar o crear tu podcast desde 0. Y encima, programo cosas."
-cv_pdf = "./assets/Mario Sánchez_Linkedin_CV.pdf"
+resume_file = current_dir / "assets" / "Mario Sánchez_Linkedin_CV.pdf"
 email="info@digitalaudiotips.com"
 social_media = {
     "LinkedIn":"https://www.linkedin.com/in/mariosanchezsonido/",
@@ -13,7 +17,7 @@ social_media = {
     "GitHub":"https://github.com/mario-sound",
     "DigitalAudioTips":"https://digitalaudiotips.com/",
 }
-css_file = "./styles/main.css"
+css_file = current_dir / "styles" / "main.css"
 
 # Título y icono de la página
 st.set_page_config(page_title=page_title, page_icon=page_icon)
@@ -22,18 +26,21 @@ st.set_page_config(page_title=page_title, page_icon=page_icon)
 # CSS
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
+with open(resume_file, "rb") as pdf_file:
+    PDFbyte = pdf_file.read()
+profile_pic = Image.open(profile_pic)
 
 # Primera sección, foto, título, descripción, CV en PDF y mail
 col1, col2= st.columns([1.5,3], gap="small")
 with col1:
-    st.image(image, width=None)
+    st.image(profile_pic, width=None)
 
 with col2:
     st.title("Mario Sánchez Molina")
     st.write(description)
-    with open(cv_pdf, "rb") as file:
+    with open(resume_file, "rb") as file:
         st.download_button("Descarga mi CV",
-                           data=file,
+                           data=PDFbyte,
                            file_name="CV_MarioSanchezMolina.pdf")
     st.write("📩", email)
 #st.divider()
