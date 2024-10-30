@@ -157,17 +157,21 @@ with st.expander("Proyectos"):
         st.write('''
                  Este link te llevará a mi web. En mi web vendo librerías de sonido para UI, UX, también para videojuegos. También comparto mis herramientas, las cuales yo mismo programo. Además hablo de audio, comparto mis conocimientos y te cuento un poco más acerca de mí.
                  ''')
-        st.link_button("Link a mi web", "https://digitalaudiotips.com/")
+        if st.button("Link a mi web"):
+            st.markdown("[Visita mi web](https://digitalaudiotips.com/)", unsafe_allow_html=True)
+
     with tab2:
         st.write('''
                  Esta herramienta sencilla está diseñada para escuchar audios de los cuales necesitamos comprobar una transcripción. Utiliza un documento de excel como base, y te permite escuchar cada audio individualmente. Si una transcripción no es correcta, podremos modificar el texto directamente en la app.
                  ''')
-        st.link_button("Link a la app", "https://github.com/mario-sound/QA_Tool_0.1")
+        if st.button("Link a la app"):
+            st.markdown("[Visita mi app](https://github.com/mario-sound/QA_Tool_0.1/)", unsafe_allow_html=True)
     with tab3:
         st.write('''
                  Digital Audio Renamer es una herramienta diseñada para profesionales del sonido, productores de audio y cualquier persona que trabaje con grandes cantidades de archivos de audio. Esta aplicación permite renombrar archivos .wav de forma eficiente, flexible y personalizada, facilitando la organización y el manejo de archivos en proyectos de grabación y edición de sonido.
                  ''')
-        st.link_button("Link a la app", "https://github.com/mario-sound/digitalaudiorenamer")
+        if st.button("Link a la app"):
+            st.markdown("[Visita mi app](https://github.com/mario-sound/digitalaudiorenamer)", unsafe_allow_html=True)
 
 with st.expander("Idiomas"):
     lan1, lan2, lan3 = st.columns([1,1,1])
