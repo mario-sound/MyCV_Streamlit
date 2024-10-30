@@ -9,7 +9,7 @@ page_icon = "https://img.icons8.com/?size=100&id=3404&format=png&color=000000"
 page_title = "Mario Sánchez CV Audio Dev"
 profile_pic = current_dir / "assets" / "image.png"
 description = "Te ayudo con la producción de audio de tu podcast o videojuego. También te ayudo a mejorar o crear tu podcast desde 0. Y encima, programo cosas."
-resume_file = current_dir / "assets" / "Mario Sánchez_Linkedin_CV.pdf"
+resume_file = current_dir / "assets" / "Mario_Sanchez_Linkedin_CV.pdf"
 email="info@digitalaudiotips.com"
 social_media = {
     "LinkedIn":"https://www.linkedin.com/in/mariosanchezsonido/",
@@ -26,8 +26,11 @@ st.set_page_config(page_title=page_title, page_icon=page_icon)
 # CSS
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
-with open(resume_file, "rb") as pdf_file:
-    PDFbyte = pdf_file.read()
+if resume_file.exists():
+    with open(resume_file, "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+else:
+    st.error("El archivo PDF de CV no se encontró.")
 profile_pic = Image.open(profile_pic)
 
 # Primera sección, foto, título, descripción, CV en PDF y mail
