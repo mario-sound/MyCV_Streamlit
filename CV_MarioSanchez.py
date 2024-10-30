@@ -63,7 +63,8 @@ necesita para ofrecer este servicio y yo puedo poner esas herramientas a disposi
 Compruebalo aquí: https://www.doblajevideojuegos.es/fichatecnico/mario-sanchez-molina
          ''')
 #st.write("#") # Esto simplemente es un separador que no estoy usando
-st.divider() # Esto simplemente es un separador
+#st.divider() # Esto simplemente es un separador
+st.markdown("---")  # Crea un separador horizontal
 
 # Tercera sección, Experiencia, estudios, proyectos e idiomas como desplegables.
 with st.expander("Experiencia laboral"):
